@@ -16,6 +16,12 @@ filegroup(
     visibility = ["//rslib:__subpackages__"],
 )
 
+filegroup(
+    name = "builtin_ftl",
+    srcs = glob(["**/*.ftl"]),
+    visibility = ["//src-dist:__pkg__"],
+)
+
 py_binary(
     name = "format",
     srcs = ["format.py"],

@@ -9,6 +9,7 @@ genrule(
     outs = ["hooks_gen.py"],
     cmd = "$(location //qt:genhooks_gui) $@",
     tools = ["//qt:genhooks_gui"],
+    visibility = ["//src-dist:__pkg__"],
 )
 
 genrule(

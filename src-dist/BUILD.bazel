@@ -1,0 +1,23 @@
+load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+
+pkg_tar(
+    name = "src-dist",
+    srcs = [
+        "//:repo_metadata",
+        "//:buildinfo.txt",
+        "//ftl:builtin_ftl",
+        "//proto:proto",
+        "//pylib/anki:hooks_gen",
+        "//pylib/anki:proto",
+        "//pylib/anki:py_source_files",
+        "//pylib/rsbridge:rust_source_files",
+        "//qt/aqt:aqt_with_data",
+        "//qt/aqt:hooks_gen",
+        "//qt/aqt/data:data",
+        "//rslib:rust_source_files_with_data",
+        "//rslib/i18n:rust_source_files",
+    ],
+    strip_prefix = "/",
+    package_dir = "bazel-dist",
+    extension = "tar.gz",
+)

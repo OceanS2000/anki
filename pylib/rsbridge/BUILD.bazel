@@ -32,6 +32,12 @@ rust_library(
     ],
 )
 
+filegroup(
+    name = "rust_source_files",
+    srcs = glob(["**/*.rs"]) + ["Cargo.toml"],
+    visibility = ["//src-dist:__pkg__"],
+)
+
 rustfmt_test(
     name = "format_check",
     srcs = glob([

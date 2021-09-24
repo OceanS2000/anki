@@ -39,5 +39,18 @@ pkg_tar(
     tags = ["manual"],
 )
 
+# for downstream source distribute
+filegroup(
+    name = "repo_metadata",
+    srcs = [
+        "CONTRIBUTORS",
+        "LICENSE",
+        "Cargo.lock",
+        "Cargo.toml",
+        "repos.bzl",
+    ],
+    visibility = ["//src-dist:__pkg__"],
+)
+
 # for version info
 exports_files(["defs.bzl"])

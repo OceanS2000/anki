@@ -17,6 +17,7 @@ genrule(
     outs = ["hooks_gen.py"],
     cmd = "$(location //pylib/tools:genhooks) $@",
     tools = ["//pylib/tools:genhooks"],
+    visibility = ["//src-dist:__pkg__"],
 )
 
 _py_srcs = glob(
@@ -105,6 +106,7 @@ filegroup(
     ],
     visibility = [
         "//pylib:__subpackages__",
+        "//src-dist:__pkg__",
     ],
 )
 

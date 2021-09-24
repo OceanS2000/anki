@@ -4,5 +4,8 @@ filegroup(
         "//qt/aqt/data/lib",
         "//qt/aqt/data/web",
     ],
-    visibility = ["//qt:__subpackages__"],
+    visibility = [
+        "//qt:__subpackages__",
+        "//src-dist:__pkg__",
+    ],
 )

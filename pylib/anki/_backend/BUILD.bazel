@@ -68,6 +68,8 @@ alias(
 
 _py_srcs = [
     "genbackend.py",
+    "genfluent.py",
+    "rsbridge.pyi",
     "__init__.py",
 ]
 
